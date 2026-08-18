@@ -27,18 +27,17 @@ export const OrderRequestSchema = z
     discountCode: z.string().optional(),
     cardNumber: z.string().min(1, { message: 'Card number is required' }),
     cardName: z
-      .string({ required_error: 'Cardholder name is required' })
+      .string({ error: 'Cardholder name is required' })
       .trim()
       .min(2, { message: 'Cardholder name is required' }),
     cardExpiryMonth: z.coerce
-      .number({ required_error: 'Expiry month is required' })
+      .number({ error: 'Expiry month is required' })
       .int()
       .min(1, { message: 'Expiry month must be between 1 and 12' })
       .max(12, { message: 'Expiry month must be between 1 and 12' }),
     cardExpiryYear: z
       .union([z.string(), z.number()], {
-        required_error: 'Expiry year is required',
-        invalid_type_error: 'Expiry year is required',
+        error: 'Expiry year is required',
       })
       .transform((value) => String(value).trim())
       .superRefine((value, ctx) => {
