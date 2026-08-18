@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QuickBite Takeaway</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <header class="hero">
+        <p class="brand">QuickBite</p>
+        <h1>Order takeaway</h1>
+        <p class="lede">Pick items, apply a code, pay with a fake card.</p>
+      </header>
+
+      <section class="panel" aria-labelledby="menu-heading">
+        <h2 id="menu-heading">Menu</h2>
+        <ul id="menu-list" class="menu-list"></ul>
+      </section>
+
+      <section class="panel" aria-labelledby="cart-heading">
+        <h2 id="cart-heading">Cart</h2>
+        <ul id="cart-list" class="cart-list"></ul>
+        <p id="cart-empty" data-testid="cart-empty" class="muted">Cart is empty</p>
+
+        <label class="field">
+          Discount code
+          <input id="discount" data-testid="input-discount" type="text" placeholder="SAVE10 / MEALDEAL / FREESHIP" />
+        </label>
+        <label class="field">
+          Name on card
+          <input id="card-name" data-testid="input-card-name" type="text" placeholder="As shown on card" required value="Test User" />
+        </label>
+        <label class="field">
+          Card number
+          <input
+            id="card"
+            data-testid="input-card-number"
+            type="text"
+            inputmode="numeric"
+            placeholder="16 digits; even last digit = success"
+            maxlength="19"
+            required
+            value="4111111111111112"
+          />
+        </label>
+        <div class="field-row">
+          <label class="field">
+            Expiry month
+            <input
+              id="card-month"
+              data-testid="input-card-month"
+              type="number"
+              min="1"
+              max="12"
+              placeholder="MM"
+              required
+              value="12"
+            />
+          </label>
+          <label class="field">
+            Expiry year
+            <input
+              id="card-year"
+              data-testid="input-card-year"
+              type="text"
+              inputmode="numeric"
+              pattern="[0-9]{4}"
+              maxlength="4"
+              placeholder="YYYY"
+              required
+              value="2030"
+            />
+          </label>
+        </div>
+        <button id="place-order" type="button">Place order</button>
+        <p id="status" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
