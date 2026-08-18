@@ -1,6 +1,6 @@
 # QuickBite — Takeaway Ordering (Test Strategy Assessment)
 
-Minimal takeaway ordering demo. The application is intentionally thin; the focus is **test strategy**, **shift-left**, **automation pyramid**, and **meaningful use of AI**.
+Minimal takeaway ordering demo. The application is intentionally thin; the focus is **test strategy**, **shift-left testing**, **automation pyramid**, and **Allure reporting**.
 
 | Layer | What it does |
 | --- | --- |
@@ -235,7 +235,6 @@ docs/                     TEST_CASES.md — test case catalogue;
 .env                      dotenvx-encrypted credential values (committed — safe to share)
 .env.keys                 DOTENV_KEY (gitignored — keep in team vault only)
 .env.example              credential workflow docs — variable names only, no values
-.husky/                   pre-commit (typecheck), pre-push (npm test)
 .github/workflows/        ci.yml — two-job GitHub Actions pipeline
 allure-results/           raw JSON results written by allure-vitest / allure-playwright (gitignored)
 allure-report/            generated HTML report (gitignored; uploaded as CI artifact)
