@@ -64,6 +64,8 @@ jobs:
     needs: unit-contract-api
     permissions:
       contents: read
+    env:
+      DOTENV_KEY: ${{ secrets.DOTENV_PRIVATE_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -88,8 +90,6 @@ jobs:
 
       - name: E2E tests
         run: npm run test:e2e
-        env:
-          DOTENV_KEY: ${{ secrets.DOTENV_PRIVATE_KEY }}
 
       - name: Generate Allure report
         if: ${{ !cancelled() }}
