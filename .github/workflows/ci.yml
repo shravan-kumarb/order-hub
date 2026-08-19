@@ -11,7 +11,11 @@ jobs:
     permissions:
       contents: read
     env:
+<<<<<<< HEAD
       DOTENV_PRIVATE_KEY: ${{ secrets.DOTENV_PRIVATE_KEY }}
+=======
+      DOTENV_PRIVATE_KEY: ${{ secrets.DOTENV_PRIVATE_KEY }}      
+>>>>>>> 23bf87e1ec0b0518eb3d0158142cdb8bc3d83ce7
     steps:
       - name: Checkout
         uses: actions/checkout@v4
